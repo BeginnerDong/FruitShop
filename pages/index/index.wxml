@@ -4,9 +4,9 @@
 		<view class="radiu40 font12 jupbox" bindtap="show">跳过</view>
 	</view>
 </view>
-<view class="box">
+<view class="box bg1">
 	<view class="box-top">
-		<swiper indicator-dots="{{false}}" autoplay="{{false}}" previous-margin="{{'80rpx'}}" next-margin="{{'80rpx'}}" bindchange="swiperChange">
+		<swiper indicator-dots="{{false}}" circular="circular" autoplay="{{false}}" previous-margin="{{'80rpx'}}" next-margin="{{'80rpx'}}" bindchange="swiperChange">
 		  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
 		    <swiper-item>
 				<image src="{{item}}" class="slide-image {{swiperIndex == index? 'active' : ''}}" />
@@ -15,11 +15,14 @@
 		</swiper>
 	</view>
 </view>
-<view class="search radiu40 hiden bg1">
-	<image src="../../image/home-icon.png" style="width: 32rpx; height: 32rpx;"></image>
-	<input class="ilblock"/>
-	<view class="ilblock color5 bg3 font15 search-box flo-right">搜索</view>
+<view class="bg1">
+	<view class="search radiu40 hiden bg1">
+		<image src="../../image/home-icon.png" style="width: 32rpx; height: 32rpx;"></image>
+		<input class="ilblock"/>
+		<view class="ilblock color5 bg3 font15 search-box flo-right">搜索</view>
+	</view>
 </view>
+
 
 <view class="bg2" style="padding: 4% 0rpx; width: 100%; margin-bottom: 100rpx; display: flex;justify-content:space-around;">
 	<view class="left-nav bg1 font14" style="flex: 1;">
@@ -28,7 +31,7 @@
 		<view class="left-listitem {{currentData == 2 ? 'start' : ''}}"  data-current = "2" bindtap="checkCurrent">进口水果</view>
 		<view class="left-listitem {{currentData == 3 ? 'start' : ''}}"  data-current = "3" bindtap="checkCurrent">当季水果</view>
 	</view>
-	<view style="flex: 3;">
+	<view style="flex:3;">
 		<view class="right bg1 flo-right" style="margin-top: 0rpx;" bindtap="intoPath" data-path="/pages/storeDetails/storeDetails">
 				<view class="imgBox ilblock radiu15">
 					<image src="../../image/home-img1.png"></image>

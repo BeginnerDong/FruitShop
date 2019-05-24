@@ -1,4 +1,6 @@
-
+page{
+	background: #F2F2F2;
+}
 .video-box{
 	position: fixed;
 	top: 0rpx;

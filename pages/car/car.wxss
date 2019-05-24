@@ -60,7 +60,7 @@ page{
 	margin: 40rpx 20rpx;
 }
 .foot-right button{
-	width: 160rpx;
+	width: 29%;
 	height: 70rpx; 
 	margin-left: 30rpx; 
 	line-height: 70rpx;

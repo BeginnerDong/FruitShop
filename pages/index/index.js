@@ -10,7 +10,8 @@ const token = new Token();
 
 Page({
   data: {
-		 is_show:true,
+		 is_show:false,
+		 circular:true,
 		 imgUrls: [
 		   '../../image/banner.png',
 		   '../../image/banner.png',
