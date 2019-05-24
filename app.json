@@ -1,0 +1,27 @@
+{
+  "pages":[
+    "pages/index/index",
+		"pages/car/car",
+		"pages/user/user",
+		"pages/storeDetails/storeDetails",
+		"pages/oderTrue/oderTrue",
+		"pages/branchManage/branchManage",
+		"pages/allOder/allOder",
+		"pages/afterSale/afterSale",
+		"pages/evaluate/evaluate",
+		"pages/set/set",
+		"pages/login/login",
+		"pages/orderInfo/orderInfo",
+		"pages/aboutUs/aboutUs",
+		"pages/myMessage/myMessage",
+		"pages/afterSaleOder/afterSaleOder",
+		"pages/userBranchManage/userBranchManage",
+		"pages/changePaswad/changePaswad"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor":"#2BA245",
+    "navigationBarTitleText": "首页",
+		 "navigationBarTextStyle":"#fff"
+  }
+}

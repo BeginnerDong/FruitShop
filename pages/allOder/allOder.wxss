@@ -1,0 +1,80 @@
+.topnav{
+	width: 100%;
+	height: 100rpx;
+	font-size: 26rpx;
+	line-height: 90rpx;
+	text-align: center;
+	color: rgb(153,153,153);
+	flex-wrap: nowrap;
+	white-space: nowrap; 
+	display: flex;
+	
+}
+.top-item{
+	display: inline-block;
+	width: 20%;
+}
+.itemstar{
+	font-size: 30rpx;
+	color:rgb(23,23,23);
+	border-bottom: solid 6rpx #1AA034;
+}
+
+.bigbox{
+	width: 92%;
+	margin: 4%;
+	padding-bottom: 30rpx;
+	box-shadow: 0rpx 0rpx 20rpx #E0E0E0;
+	border-radius: 20rpx;
+}
+
+.box{
+	width: 32%;
+	height: 200rpx;
+	overflow: hidden;
+	border-radius: 12rpx;
+	margin: 20rpx 0rpx 0rpx;
+	margin-left: 30rpx;
+	position: relative;
+	top: -20rpx;
+}
+.box img{
+	width: 100%;
+	height: 100%;
+}
+.name{
+	/* border: solid 1rpx red; */
+	height: 66rpx;
+}
+.list-item{
+	border: solid 1rpx #F5F5F5;
+	width:60rpx; 
+	height: 40rpx;
+	line-height: 40rpx;
+	text-align: center;
+	font-size: 26rpx;
+}
+.box-btm{
+	width: 130rpx;
+	height: 50rpx;
+	border: solid 1rpx #D5D5D5;
+	text-align: center;
+	line-height: 50rpx;
+	border-radius: 10rpx;
+}
+.boxBtmGreen{
+	border: solid 1rpx #1AA034;
+	color: #1AA034;
+}
+
+.btmImg{
+	width: 80rpx;
+	height:80rpx;
+	float: right;
+	margin-top: 40rpx;
+	overflow: hidden;
+}
+.btmImg image{
+		width: 100%;
+		height: 100%;
+}

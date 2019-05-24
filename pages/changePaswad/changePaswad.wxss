@@ -1,0 +1,23 @@
+.box{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0rpx 4%;
+}
+
+.infoList{
+	box-sizing: border-box;
+	padding: 40rpx 0rpx;
+	width: 100%;
+	border-bottom: solid 1rpx #E3E3E3;
+}
+.infoList input{
+	margin-left: 50rpx;
+	position: relative;
+	top: 14rpx;
+	width: 55%;
+	
+}
+
+
+
+

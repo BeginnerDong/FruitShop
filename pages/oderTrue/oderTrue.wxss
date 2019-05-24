@@ -1,0 +1,89 @@
+/* page{
+	background: #F4F4F4;
+} */
+
+.middle-img{
+	width: 84%;
+	height: 340rpx;
+	margin: 0rpx auto;
+	/* border: solid 1px red; */
+}
+.middle-img image{
+	width: 100%;
+	height: 100%;
+}
+
+.footer-img image{
+	width: 26rpx;
+	height:20rpx;
+}
+
+.buybtm-img{
+	width:32.6%;
+	height: 246rpx;
+	margin: 30rpx 10rpx 30rpx 30rpx;
+	overflow: hidden;
+}
+.buybtm-img image{
+	width:100%;
+	height: 100%;
+}
+.buybtm-norms{
+	width: 90rpx;
+	height: 40rpx;
+	line-height: 40rpx;
+	text-align: center;
+	background: #F8F8F8;
+	margin-top: 30rpx;
+}
+.list{
+		height: 90rpx;
+		line-height: 90rpx;
+		padding-left: 30rpx;
+		border-bottom: solid 1px #ECECEC;
+		padding-right: 30rpx;
+	}
+.list-item{
+	background: #F5F5F5;
+	width:60rpx; height: 50rpx;line-height: 50rpx;
+	text-align: center;
+	font-size: 26rpx;
+	margin-left: 2rpx;
+}
+/* 信息框 */
+.infoBox{
+	width:92% ;
+	box-shadow: 0rpx 0rpx 14rpx #E3E3E3;
+	margin: 30rpx auto;
+}
+.infoList{
+	line-height: 90rpx;
+	box-sizing: border-box;
+	padding:0rpx 30rpx;
+	border-bottom: solid 1px #ECECEC;
+}
+.infoList input{
+	margin-left: 50rpx;
+	position: relative;
+	top: 14rpx;
+	width: 57%;
+	
+}
+
+
+/* 底部 */
+.oder-btm{
+	width: 100%;
+	height: 100rpx;
+	position: fixed;
+	bottom: 0rpx;
+	border-top: solid 1rpx #F9F9F9;
+	box-sizing: border-box;
+	padding: 0rpx 4%;
+}
+.oder-btm button{
+	width: 200rpx; 
+	height: 80rpx;
+	line-height: 80rpx; 
+	margin-left: 30rpx;
+}

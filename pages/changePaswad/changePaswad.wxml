@@ -1,0 +1,14 @@
+<view class="box">
+	
+	<view class="infoList font14 color1">
+		旧密码：<input class="font12 color3 ilblock" placeholder="请输入您的旧密码" />
+	</view>
+	<view class="infoList font14 color1">
+		新密码：<input class="font12 color3 ilblock" placeholder="请输入您要改的密码(6-12位)" />
+	</view>
+	<view class="infoList font14 color1">
+		确认新密码：<input class="font12 color3 ilblock" placeholder="请再次输入您要改的密码(6-12位)" />
+	</view>
+	
+	<button class="color5" style="width: 80%; margin: 300rpx auto;" bindtap="show">确认</button>
+</view>

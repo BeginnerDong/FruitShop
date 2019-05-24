@@ -1,0 +1,36 @@
+.infoList{
+	box-sizing: border-box;
+	padding: 4%;
+	border-bottom: solid 1rpx #E0E0E0;
+}
+.head{
+	width: 86rpx;
+	height:86rpx;
+	border-radius: 50%;
+	margin-right: 30rpx;
+	position: relative;
+}
+.headImg{
+	height: 100%;
+	width: 100%;
+}
+.infoList input{
+	margin-left: 50rpx;
+	width: 80%;
+	position: relative;
+	top: 14rpx;
+}
+.dalet{
+	width: 24rpx; 
+	height: 24rpx; 
+	position: absolute;
+	top: 1rpx;
+	right:-1rpx;
+}
+
+button{
+	width: 80%;
+	height: 70rpx;
+	line-height: 70rpx;
+	margin: 200rpx auto;
+}

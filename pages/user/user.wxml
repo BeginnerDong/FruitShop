@@ -1,0 +1,124 @@
+<view class="top bg3">
+	<image class="big-bg" src="../../image/banner.png"></image>
+	<view class="bg-top">
+		<view style="width: 100%;">
+			<image class="flo-right" src="../../image/about-icon.png" style="width: 35rpx; height: 35rpx; margin-right: 30rpx;" bindtap="intoPath" data-path="/pages/set/set"></image>
+		</view>
+		<view class="head radiu50 hiden ilblock">
+			<image src="../../image/about-img1.png" style="width: 100%;height: 100%;"></image>
+		</view>
+		<view class="ilblock color5 font14 overflow1" style="position: relative;top: -40rpx; margin-left: 30rpx;">名称名称</view>
+	</view>
+</view>
+<view class="bg1">
+	
+<view class="list radiu15">
+	<view class="bag">
+		<view class="bagtext ilblock color1 font14">我的订单</view>
+		<view class="more ilblock color3" bindtap="intoPath" data-path="/pages/allOder/allOder" >查看更多
+			<image src="../../image/arrow-icon1.png" style="width: 11rpx; height: 21rpx;margin-left: 10rpx;"></image>
+		</view>
+	</view>
+	<view class="list_item" bindtap="intoPath" data-path="/pages/allOder/allOder">
+		<view class="list_itemimg">
+			<image src="../../image/about-icon1.png"></image>
+		</view>
+		<view class="font12 color2 list_itemText">待支付</view>
+	</view>
+	<view class="list_item" bindtap="intoPath" data-path="/pages/allOder/allOder">
+		<view class="list_itemimg">
+			<image src="../../image/about-icon2.png"></image>
+		</view>
+		<view class="font12 color2 list_itemText">待发货</view>
+	</view>
+	<view class="list_item" bindtap="intoPath" data-path="/pages/allOder/allOder">
+		<view class="list_itemimg">
+			<image src="../../image/about-icon3.png"></image>
+		</view>
+		<view class="font12 color2 list_itemText">待收货</view>
+	</view>
+	<view class="list_item" bindtap="intoPath" data-path="/pages/allOder/allOder">
+		<view class="list_itemimg">
+			<image src="../../image/about-icon4.png"></image>
+		</view>
+		<view class="font12 color2 list_itemText">待评价</view>
+	</view>
+	<view class="list_item" bindtap="intoPath" data-path="/pages/afterSaleOder/afterSaleOder">
+		<view class="list_itemimg">
+			<image src="../../image/about-icon5.png"></image>
+		</view>
+		<view class="font12 color2 list_itemText">退款/售后</view>
+	</view>
+	<view style="width: 100%; clear: both;"></view>
+</view>
+</view>
+<view class="info bg1" bindtap="intoPath" data-path="/pages/userBranchManage/userBranchManage">
+	<view class="ilblock listimg">
+		<image src="../../image/about-icon8.png"></image>
+	</view>
+	<view class="ilblock color1 font14">网点管理</view>
+	<view class="color2 font24 flo-right">
+	 <image src="../../image/arrow-icon1.png" style="width: 11rpx; height: 21rpx;margin-left: 10rpx;"></image>
+	 </view>
+</view>
+<view class="info bg1" bindtap="intoPath" data-path="/pages/myMessage/myMessage">
+	<view class="ilblock listimg">
+		<image src="../../image/about-icon6.png"></image>
+	</view>
+	<view class="ilblock color1 font14">我的消息</view>
+	<view class="color2 font24 flo-right">
+	 <image src="../../image/arrow-icon1.png" style="width: 11rpx; height: 21rpx;margin-left: 10rpx;"></image>
+	 </view>
+</view>
+<view class="info bg1">
+	<view class="ilblock listimg">
+		<image src="../../image/about-icon8.png"></image>
+	</view>
+	<view class="ilblock color1 font14">联系客服</view>
+	<view class="color3 font13 flo-right">029-23515562
+	 <image src="../../image/arrow-icon1.png" style="width: 11rpx; height: 21rpx;margin-left: 10rpx;"></image>
+	 </view>
+</view>
+<view class="info bg1" bindtap="intoPath" data-path="/pages/aboutUs/aboutUs">
+	<view class="ilblock listimg">
+		<image src="../../image/about-icon9.png"></image>
+	</view>
+	<view class="ilblock color1 font14">关于我们</view>
+	<view class="color2 font24 flo-right">
+	 <image src="../../image/arrow-icon1.png" style="width: 11rpx; height: 21rpx;margin-left: 10rpx;"></image>
+	 </view>
+</view>
+<view class="info bg1" bindtap="intoPath" data-path="/pages/login/login">
+	<view class="ilblock listimg">
+		<image src="../../image/about-icon10.png"></image>
+	</view>
+	<view class="ilblock color1 font14">网点入口</view>
+	<view class="color2 font24 flo-right">
+	 <image src="../../image/arrow-icon1.png" style="width: 11rpx; height: 21rpx;margin-left: 10rpx;"></image>
+	 </view>
+</view>
+
+<view style="width: 100%; height: 120rpx;"></view>
+
+
+
+<view class="navbar">
+	<view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/index/index">
+		<view class="nav_img">
+			<image src="../../image/nabar1.png"></image>
+		</view>
+		<view class="text">首页</view>
+	</view>
+	<view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/car/car">
+		<view class="nav_img">
+			<image src="../../image/nabar2.png"></image>
+		</view>
+		<view class="text">购物车</view>
+	</view>
+	<view class="navbar_item">
+		<view class="nav_img">
+			<image src="../../image/nabar3-a.png" style="width: 44rpx;"></image>
+		</view>
+		<view class="text this-text">我的</view>
+	</view>
+</view>

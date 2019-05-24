@@ -1,0 +1,33 @@
+<!--logs.wxml-->
+
+<view class="bigbox bg1">
+	<view class="font12">
+		<view class="color3 ilblock" style="margin-left: 30rpx;">交易时间：2018-08-30</view>
+		<view class="color4 ilblock flo-right" style="margin-right: 30rpx;">处理中</view>
+	</view>
+	<view style="margin-top: 30rpx;">
+		<view class="ilblock box">
+			<image src="../../image/home-img1.png"></image>
+		</view>
+		<view class="ilblock box-right flo-right">
+			<view class="color1 font13 name overflow2">标题标题标题标题标题标题标标题标题标题标题</view>
+			<view class="color4 font13" style="margin-top: 94rpx;">¥59.00</view>
+		</view>
+	</view>
+</view>
+<view class="bigbox bg1">
+	<view class="font12">
+		<view class="color3 ilblock" style="margin-left: 30rpx;">交易时间：2018-08-30</view>
+		<view class="color4 ilblock flo-right" style="margin-right: 30rpx;">处理中</view>
+	</view>
+	<view style="margin-top: 30rpx;">
+		<view class="ilblock box">
+			<image src="../../image/home-img1.png"></image>
+		</view>
+		<view class="ilblock box-right flo-right">
+			<view class="color1 font13 name overflow2">标题标题标题标题标题标题标标题标题标题标题</view>
+			<view class="color4 font13" style="margin-top: 94rpx;">¥59.00</view>
+		</view>
+	</view>
+</view>
+

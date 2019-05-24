@@ -1,0 +1,56 @@
+page{
+	background: #F4F4F4;
+}
+.list{
+	box-sizing: border-box;
+	padding: 4%;
+	margin-bottom: 20rpx;
+}
+.text1{
+	margin-bottom: 12rpx;
+}
+.text1 image{
+	width: 32rpx;
+	height: 30rpx;
+}
+.text2{
+	margin-top: 20rpx;
+}
+.text2 image{
+	width: 22rpx;
+	height: 22rpx;
+	margin-right: 20rpx;
+	position: relative;
+	top: 6rpx;
+}
+.fexd{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0rpx;
+	background: rgba(0,0,0,0.5);
+}
+.fexd .bg1{
+	box-sizing: border-box;
+	width:88%;
+	height: 51%;
+	margin: 30% 6%;
+	box-sizing: border-box;
+	padding: 5%;
+}
+.infoList{
+	line-height: 90rpx;
+	box-sizing: border-box;
+	width: 100%;
+}
+.infoList input{
+	margin-left: 50rpx;
+	position: relative;
+	top: 14rpx;
+	width: 55%;
+	
+}
+
+
+
+

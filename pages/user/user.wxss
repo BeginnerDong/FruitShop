@@ -1,0 +1,105 @@
+page{
+	background: #F2F2F2;
+}
+.top{
+	width: 100%;
+	height: 400rpx;
+	position: relative;
+}
+.big-bg{
+	width: 100%;
+	height: 100%;
+}
+.bg-top{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	top: 0rpx;
+	box-sizing: border-box;
+	padding-top:12%;
+}
+
+.head{
+	width: 124rpx;
+	height: 124rpx;
+	margin-left:10%;
+	clear: both;
+	margin-top: 60rpx;
+}
+.list{
+	box-shadow:0rpx 0rpx 26rpx #AFAFAF ;
+	width: 90%;
+	margin-left: 5%;
+	position: relative; 
+	top: -60rpx;
+	background: #fff;
+}
+.bag{
+	width: 100%;
+	height: 80rpx;
+	border-bottom: solid 1rpx #E0E0E0;
+}
+.bagtext{
+	line-height: 80rpx;
+	margin-left: 30rpx;
+}
+.more{
+	font-size: 24rpx;
+	float: right;
+	width: 19%;
+	line-height: 85rpx;
+	margin-right: 30rpx;
+}
+.list_item{
+	width: 19.5%;
+	/* border: solid 1rpx red; */
+	height: 170rpx;
+	display: inline-block;
+	float: left;
+	text-align: center;
+}
+.list_itemimg{
+	width: 50rpx;
+	height: 50rpx;
+	overflow: hidden;
+	margin:20% 34%;
+}
+.list_itemimg image{
+	width: 50rpx;
+	height: 50rpx;
+}
+
+.list2{
+	box-shadow:0rpx 0rpx 26rpx #AFAFAF ;
+	width: 90%;
+	margin-left: 5%;
+	position: relative; 
+	top: -55rpx;
+	background: #fff;
+}
+.list2 .list_item{
+	width: 33%;
+}
+.list2 	.list_itemimg{
+	margin:15% 39% 10%;
+}
+.info{
+	border-bottom: solid 1rpx #F2F2F2;
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+}
+.listimg{
+	height: 100%;
+	width: 60rpx;
+	}
+
+.listimg image{
+	height: 35rpx;
+	width: 33rpx;
+	position:relative;
+	top: 10rpx;
+	}
+

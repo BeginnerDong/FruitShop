@@ -1,0 +1,74 @@
+<!--logs.wxml-->
+<block>
+	<view class="bigbox bg1">
+		<view class="ilblock ran" bindtap='choose'>
+			<image src="../../image/stores-icon2.png"></image>
+		</view>
+		<view class="ilblock box">
+			<image src="../../image/home-img1.png"></image>
+		</view>
+		<view class="ilblock flo-right" style="height: 74%;width: 54%; margin-top: 5%;margin-right: 5%;">
+			<view class="color1 font13 name overflow2">标题标题标题	标题标题标题	标题标题标题</view>
+			<view style="margin-top: 70rpx;">
+				<view class="ilblock color4 font13">¥59.00</view>
+				<view class="ilblock flo-right font13 color2">
+					<view class="ilblock list-item">-</view>
+					<view class="ilblock list-item num">1</view>
+					<view class="ilblock list-item">+</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="bigbox bg1">
+		<view class="ilblock ran" bindtap='choose'>
+			<image src="../../image/stores-icon3.png"></image>
+		</view>
+		<view class="ilblock box">
+			<image src="../../image/home-img1.png"></image>
+		</view>
+		<view class="ilblock flo-right" style="height: 74%;width: 54%; margin-top: 5%;margin-right: 5%;">
+			<view class="color1 font13 name overflow2">标题标题标题	标题标题标题	标题标题标题</view>
+			<view style="margin-top: 70rpx;">
+				<view class="ilblock color4 font13">¥59.00</view>
+				<view class="ilblock flo-right font13 color2">
+					<view class="ilblock list-item">-</view>
+					<view class="ilblock list-item num">1</view>
+					<view class="ilblock list-item">+</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</block>
+<view class="footer bg1">
+	<view class="ilblock ran2" bindtap="chooseAll">
+		<image src="../../image/stores-icon3.png"></image><text class="font14 color2" style="position: relative; top: -50rpx;">全选</text>
+	</view>
+	<view class="foot-right ilblock" style="position: relative;width: 78%; top: -48rpx; text-align: right;">
+		<view class="ilblock color1 font14" style="margin-top: 20rpx;">合计：<text class="color4 font13">¥0.00</text></view>
+		<button class="ilblock bg3 color5 font13 radiu40 flo-right" bindtap="intoPath" data-path="/pages/oderTrue/oderTrue">提交订单</button>
+	</view>
+</view>
+
+
+
+
+<view class="navbar">
+		<view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/index/index">
+			<view class="nav_img">
+				<image src="../../image/nabar1.png"></image>
+			</view>
+			<view class="text">首页</view>
+		</view>
+		<view class="navbar_item">
+			<view class="nav_img">
+				<image src="../../image/nabar2-a.png"></image>
+			</view>
+			<view class="text this-text">购物车</view>
+		</view>
+		<view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/user/user">
+			<view class="nav_img">
+				<image src="../../image/nabar3.png" style="width: 44rpx;"></image>
+			</view>
+			<view class="text">我的</view>
+		</view>
+	</view>

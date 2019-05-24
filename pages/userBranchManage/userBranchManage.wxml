@@ -1,0 +1,54 @@
+<view class="list bg1">
+	<view class="font15 color1 text1">
+		<image src="../../image/stores-icon1.png"></image>
+		中华世纪城智能柜机
+		<view class="ilblock flo-right color7 font14">218m</view>
+	</view>
+	<view class="font14 color3">陕西省西安市雁塔区高新科技路西段239号中华世纪城</view>
+	<view class="text2 font10 color3">
+		<image src="../../image/stores-icon2.png" bindtap="show"></image>默认网点
+	</view>
+</view>
+
+<view class="list bg1">
+	<view class="font15 color1 text1">
+		<image src="../../image/stores-icon1.png"></image>
+		中华世纪城智能柜机
+		<view class="ilblock flo-right color7 font14">218m</view>
+	</view>
+	<view class="font12 color3">陕西省西安市雁塔区高新科技路西段239号中华世纪城</view>
+	<view class="text2 font10 color3">
+		<image src="../../image/stores-icon3.png"></image>默认网点
+	</view>
+</view>
+
+<view class="list bg1">
+	<view class="font15 color1 text1">
+		<image src="../../image/stores-icon1.png"></image>
+		中华世纪城智能柜机
+		<view class="ilblock flo-right color7 font14">218m</view>
+	</view>
+	<view class="font12 color3">陕西省西安市雁塔区高新科技路西段239号中华世纪城</view>
+	<view class="text2 font10 color3">
+		<image src="../../image/stores-icon3.png"></image>默认网点
+	</view>
+</view>
+
+<view class="fexd" wx:if="{{is_show}}">
+	<view class="bg1 radiu15">
+		<view>
+			<image class="flo-right" style="width: 40rpx;height: 40rpx;" src="../../image/icon2.png" bindtap="show"></image>
+		</view>
+		<view class="infoList font14 color1" style="clear: both;">
+				姓名<input class="font12 color3 ilblock" style="margin-left: 76rpx;" placeholder="请输入姓名" />
+		</view>
+		<view class="infoList font14 color1">
+				手机号<input class="font12 color3 ilblock" placeholder="请输入手机号" />
+		</view>
+		<view class="infoList font14 color1">
+				验证码<input class="font12 color3 ilblock" style="width: 51%;"/>
+				<view class="ilblock color6 font13">获取验证码</view>
+		</view>
+		<button class="color5" style="width: 80%; margin: 100rpx auto;" bindtap="show">确认</button>
+	</view>
+</view>

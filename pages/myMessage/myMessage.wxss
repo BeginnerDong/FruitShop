@@ -1,0 +1,18 @@
+page{
+	background: #F2F2F2;
+}
+.box{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 30rpx;
+	margin-bottom: 20rpx;
+}
+.title{
+	width: 100%;
+	padding-bottom: 30rpx;
+}
+.text{
+	text-align: justify;
+	padding-bottom: 20rpx;
+	line-height: 38rpx;
+}

@@ -1,0 +1,72 @@
+.bigbox{
+	width: 100%;
+	margin:4% 0rpx 0rpx;
+}
+
+.box{
+	width: 32%;
+	height: 240rpx;
+	overflow: hidden;
+	border-radius: 12rpx;
+	margin: 20rpx 0rpx 0rpx;
+	margin-left: 30rpx;
+	position: relative;
+	top: -20rpx;
+}
+.box img{
+	width: 100%;
+	height: 100%;
+}
+.name{
+	/* border: solid 1rpx red; */
+	height: 66rpx;
+	margin-top: 20rpx;
+}
+.list-item{
+	border: solid 1rpx #F5F5F5;
+	width:60rpx; 
+	height: 40rpx;
+	line-height: 40rpx;
+	text-align: center;
+	font-size: 26rpx;
+}
+.box-btm{
+	width: 130rpx;
+	height: 50rpx;
+	border: solid 1rpx #D5D5D5;
+	text-align: center;
+	line-height: 50rpx;
+	border-radius: 40rpx;
+}
+.boxBtmGreen{
+	border: solid 1rpx #1AA034;
+	color: #1AA034;
+}
+
+.btmImg{
+	width: 80rpx;
+	height:80rpx;
+	float: right;
+	margin-top: 40rpx;
+	overflow: hidden;
+}
+.btmImg image{
+		width: 100%;
+		height: 100%;
+}
+.boxBtm{
+	box-sizing: border-box; 
+	padding-right: 5%;
+	padding-left: 5%;
+	border-top: solid 1rpx #F5F5F5;
+	height: 100rpx;
+	line-height: 120rpx;
+	margin-bottom: 20rpx;
+}
+textarea{
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	padding: 20rpx;
+	line-height: 36rpx;
+}
