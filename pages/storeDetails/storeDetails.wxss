@@ -141,3 +141,17 @@
 	line-height: 60rpx;
 	margin-left: 30rpx;
 }
+
+
+.sease{
+	background: rgba(0,0,0,0.5);
+	width: 40%;
+	height: 210rpx;
+	position: fixed;
+	left: 30%;
+	bottom: 25%;
+	z-index: 1500;
+	box-sizing: border-box;
+	padding: 10rpx;
+	text-align: center;
+}

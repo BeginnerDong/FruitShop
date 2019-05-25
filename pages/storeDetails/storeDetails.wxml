@@ -102,8 +102,16 @@
 				<view class="ilblock list-item">1</view>
 				<view class="ilblock list-item">+</view>
 			</view>
-				<button class="bg3" style="margin-top: 200rpx;"bindtap="show">确定</button>	
+				<button class="bg3" style="margin-top: 200rpx;" bindtap="play">确定</button>	
 		</view>
+	</view>
+</view>
+<view class="sease radiu15 color5 font13" wx:if="{{is_play}}">
+	<view>
+		<image class="flo-right" src="../../image/icon3.png" style="width: 36rpx;height: 36rpx;" bindtap="play"></image>
+	</view>
+	<view style="clear: both;margin-top: 80rpx;">
+		加入成功
 	</view>
 </view>
 <view class="big-buybox" wx:if="{{is_showb}}">

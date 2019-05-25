@@ -15,7 +15,7 @@
 		</swiper>
 	</view>
 </view>
-<view class="bg1">
+<view class="bg1"  style="margin-bottom: 30rpx;">
 	<view class="search radiu40 hiden bg1">
 		<image src="../../image/home-icon.png" style="width: 32rpx; height: 32rpx;"></image>
 		<input class="ilblock"/>
@@ -24,8 +24,8 @@
 </view>
 
 
-<view class="bg2" style="padding: 4% 0rpx; width: 100%; margin-bottom: 100rpx; display: flex;justify-content:space-around;">
-	<view class="left-nav bg1 font14" style="flex: 1;">
+<view class="bg2" style="padding:0rpx; width: 100%; margin-bottom: 120rpx; display: flex;justify-content:space-around; position: relative;">
+	<view class="left-nav bg1 font14" style="flex: 1;position: absolute;left: 0rpx; width: 22%;">
 		<view class="left-listitem {{currentData == 0 ? 'start' : ''}}"  data-current = "0" bindtap="checkCurrent">推荐</view>
 		<view class="left-listitem {{currentData == 1 ? 'start' : ''}}"  data-current = "1" bindtap="checkCurrent">热销水果</view>
 		<view class="left-listitem {{currentData == 2 ? 'start' : ''}}"  data-current = "2" bindtap="checkCurrent">进口水果</view>

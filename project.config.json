@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 107,
+			"current": 108,
 			"list": [
 				{
 					"id": -1,
@@ -681,7 +681,13 @@
 				{
 					"id": -1,
 					"name": "0",
-					"pathName": "pages/evaluate/evaluate"
+					"pathName": "pages/evaluate/evaluate",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "0",
+					"pathName": "pages/storeDetails/storeDetails"
 				}
 			]
 		}

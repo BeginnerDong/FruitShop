@@ -7,7 +7,15 @@ const token = new Token();
 Page({
   data: {
     is_show:false,
-		is_showb:false
+		is_showb:false,
+		is_play:false
+  },
+  play(e){
+  	const self=this;
+  	self.data.is_play=!self.data.is_play;
+  	self.setData({
+  		is_play:self.data.is_play
+  	})
   },
 	show(e){
 		const self=this;
