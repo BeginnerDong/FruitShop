@@ -1,63 +1,52 @@
 <view class="top hiden">
-	<image src="../../image/details-img1.png"></image>
+	<swiper style="height:400rpx" indicator-dots="{{indicatorDots}}" circular="{{circular}}" autoplay="{{autoplay}}" previous-margin="{{previousMargin}}" next-margin="{{nextMargin}}" bindchange="swiperChange">
+	  <block wx:for="{{web_mainData.bannerImg}}" wx:key="{{index}}" >
+	    <swiper-item>
+			<image src="{{item.url}}"/>
+	    </swiper-item>
+	  </block>
+	</swiper>
 </view>
 <view class="top-text color1 font13 overflow2" style="height: 66rpx; padding-right: 30rpx; margin-bottom: 20rpx;">
-	内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容内容内容内容内容内容容
+	{{web_mainData.title}}
 </view>
 <view class="top-text color4 font15" style="margin-bottom: 20rpx;">
-	￥56.00
+	￥{{web_mainData.price}}
 </view>
 <view class="bg2" style="width: 100%;height: 20rpx;"></view>
 <view class="top-text color1 font15 line">
 	商品详情
 </view>
-<view class="top-text color2 font13" style="padding-right: 30rpx; margin-bottom: 30rpx;">
-	内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容内容内容内容容内容内容内容内容
+<view class="font13">
+	<view class="content ql-editor">
+		<import src="../../wxParse/wxParse.wxml" />
+		<template is="wxParse" data="{{wxParseData:web_mainData.content}}" />
+	</view>
 </view>
-<view class="top-text color2 font13" style="padding-right: 30rpx; margin-bottom: 30rpx;">
-	内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容内容内容内容容内容内容内容内容
-</view>
-<view class="middle-img hiden hiden">
-	<image src="../../image/banner.png"></image>
-</view>
+
 
 <view class="bg2" style="width: 100%;height: 20rpx;"></view>
 <view class="top-text color1 font15 line">
 	评价
 </view>
 <view class="w700">
-	<view class="list_item">
-		<view>
-			<view class="ilblock itemimg radiu50 hiden">
-				<image src="../../image/about-img1.png"></image>
+	<block wx:for="{{web_messageData}}" wx:key="id">
+		<view class="list_item">
+			<view>
+				<view class="ilblock itemimg radiu50 hiden">
+					<image src="{{item.user[0].headImgUrl}}"></image>
+				</view>
+				<view class="ilblock" style="margin-left: 20rpx; line-height: 40rpx;position: relative;top: -14rpx;">
+					<view class="color2 font12">{{item.user[0].nickname}}</view>
+					<view class="color3 font10">{{item.create_time}}</view>
+				</view>
 			</view>
-			<view class="ilblock" style="margin-left: 20rpx; line-height: 40rpx;position: relative;top: -14rpx;">
-				<view class="color2 font12">昵称昵称昵称</view>
-				<view class="color3 font10">2019.02.23 15:09</view>
-			</view>
+			<view class="color2 font12 overflow3" style="margin-bottom: 30rpx;">{{item.content}}</view>
 		</view>
-		<view class="color1 font15" style="margin: 18rpx 0rpx;">标题标题标题标题标题</view>
-		<view class="color2 font12 overflow3" style="margin-bottom: 30rpx;">内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容内容内容内容容内容内容内
-		内容内容内容内容内容内容内容内容容内容容内容内容内容内容容内容</view>
-	</view>
-	
-	<view class="list_item">
-		<view>
-			<view class="ilblock itemimg radiu50 hiden">
-				<image src="../../image/about-img1.png"></image>
-			</view>
-			<view class="ilblock" style="margin-left: 20rpx; line-height: 40rpx;position: relative;top: -14rpx;">
-				<view class="color2 font12">昵称昵称昵称</view>
-				<view class="color3 font10">2019.02.23 15:09</view>
-			</view>
-		</view>
-		<view class="color1 font15" style="margin: 18rpx 0rpx;">标题标题标题标题标题</view>
-		<view class="color2 font12 overflow3" style="margin-bottom: 30rpx;">内容内容内容内容内容内容内容内容内容内容内容内容内容内容容内容内容内容内容容内容内容内
-		内容内容内容内容内容内容内容内容容内容容内容内容内容内容容内容</view>
-	</view>
-	<view class="color1 font13" style="text-align: center; line-height: 80rpx;">
+	</block>
+<!-- 	<view class="color1 font13" style="text-align: center; line-height: 80rpx;">
 		查看更多<image src="../../image/details-icon1.png" style="width: 26rpx; height: 12rpx; margin-left: 20rpx;"></image>
-	</view>
+	</view> -->
 </view>
 <view style="width: 100%; height: 100rpx;"></view>
 <view class="buy">
@@ -71,7 +60,7 @@
 				返回首页
 			</view>
 		</view>
-		<view class="ilblock" style="width: 45%; text-align: center; margin-top: 4rpx;" bindtap="show" >
+		<view class="ilblock" style="width: 45%; text-align: center; margin-top: 4rpx;" bindtap="selectModel" data-type="addCart" >
 			<view class="footer-img">
 				<image src="../../image/details-icon2.png"></image>
 			</view>
@@ -80,60 +69,30 @@
 			</view>
 		</view>
 	</view>
-	<button class="ilblock" style="width: 52%;"  bindtap="showb">立即购买</button>
+	<button class="ilblock" style="width: 52%;"   bindtap="selectModel" data-type="buy">立即购买</button>
 </view>
 
-<view class="big-buybox" wx:if="{{is_show}}">
+<view class="big-buybox" wx:if="{{web_isShow}}">
 	<view class="big-buybtm bg1">
 		<view class="buybtm-img ilblock radiu15 hiden flo-left">
-			<image src="../../image/home-img1.png"></image>
+			<image src="{{web_mainData.mainImg[0].url}}"></image>
 		</view>
 		<view class="ilblock flo-right" style="width: 60%; ">
-			<image src="../../image/icon2.png" style="width: 36rpx; height: 36rpx;float: right;margin: 30rpx;" bindtap="show"></image>
-			<view class="color1 font15 overflow2"style="clear: both;width: 92%;height: 80rpx;">标题标题标题标题标题标题标题标题标题标题</view>
-			<view class="color4 font15 overflow1"style="margin-top: 30rpx;">￥56.00</view>
+			<image src="../../image/icon2.png" style="width: 36rpx; height: 36rpx;float: right;margin: 30rpx;"  bindtap="isShow"></image>
+			<view class="color1 font15 overflow2"style="clear: both;width: 92%;height: 80rpx;">{{web_mainData.title}}</view>
+			<view class="color4 font15 overflow1"style="margin-top: 30rpx;">￥{{web_mainData.price}}</view>
 		</view>
 		<view class="list" style="clear: both;">
 			<view class="color1 font13 ilblock">
 				购买数量：
 			</view>
 			<view class="color1 font12 ilblock flo-right">
-				<view class="ilblock list-item">-</view>
-				<view class="ilblock list-item">1</view>
-				<view class="ilblock list-item">+</view>
+				<view class="ilblock list-item" bindtap="counter" data-type="-">-</view>
+				<view class="ilblock list-item">{{web_count}}</view>
+				<view class="ilblock list-item" bindtap="counter" data-type="+">+</view>
 			</view>
-				<button class="bg3" style="margin-top: 200rpx;" bindtap="play">确定</button>	
+				<button class="bg3" style="margin-top: 200rpx;" bindtap="{{web_buttonType=='buy'?'goBuy':'addCart'}}">确定</button>	
 		</view>
 	</view>
 </view>
-<view class="sease radiu15 color5 font13" wx:if="{{is_play}}">
-	<view>
-		<image class="flo-right" src="../../image/icon3.png" style="width: 36rpx;height: 36rpx;" bindtap="play"></image>
-	</view>
-	<view style="clear: both;margin-top: 80rpx;">
-		加入成功
-	</view>
-</view>
-<view class="big-buybox" wx:if="{{is_showb}}">
-	<view class="big-buybtm bg1">
-		<view class="buybtm-img ilblock radiu15 hiden flo-left">
-			<image src="../../image/home-img1.png"></image>
-		</view>
-		<view class="ilblock flo-right" style="width: 60%; ">
-			<image src="../../image/icon2.png" style="width: 36rpx; height: 36rpx;float: right;margin: 30rpx;" bindtap="showb"></image>
-			<view class="color1 font15 overflow2"style="clear: both;width: 92%;height: 80rpx;">标题标题标题标题标题标题标题标题标题标题</view>
-			<view class="color4 font15 overflow1"style="margin-top: 30rpx;">￥56.00</view>
-		</view>
-		<view class="list" style="clear: both;">
-			<view class="color1 font13 ilblock">
-				购买数量：
-			</view>
-			<view class="color1 font12 ilblock flo-right">
-				<view class="ilblock list-item">-</view>
-				<view class="ilblock list-item">1</view>
-				<view class="ilblock list-item">+</view>
-			</view>
-				<button class="bg3" style="margin-top: 200rpx;" bindtap="intoPath" data-path="/pages/oderTrue/oderTrue">确定</button>	
-		</view>
-	</view>
-</view>
+

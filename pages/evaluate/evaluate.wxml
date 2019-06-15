@@ -2,30 +2,32 @@
 <view>
 	<view class="bigbox bg1">
 		<view class="font12" style="height: 100rpx; line-height: 100rpx;">
-			<view class="color3" style="margin-left: 30rpx;">交易时间：2018-08-30</view>
+			<view class="color3" style="margin-left: 30rpx;">交易时间：{{web_mainData.create_time}}</view>
 		</view>
-		<view>
-			<view class="ilblock box">
-				<image src="../../image/home-img1.png"></image>
-			</view>
-			<view class="ilblock flo-right" style="height: 50%;width: 54%;margin-right:5%;">
-				<view class="color1 font13 name overflow2">标题标题标题标题标题标题标题标题标题标题标题标题</view>
-				<view style="margin-top: 100rpx;">
-					<view class="color2 font12 ilblock flo-left">x1</view>
-					<view class="color4 font13 ilblock flo-right">¥59.00</view>
-					<view style="clear: both;"></view>
+		<block wx:for="{{web_mainData.products}}" wx:key="id">
+			<view>
+				<view class="ilblock box">
+					<image src="{{item.snap_product.mainImg[0].url}}"></image>
+				</view>
+				<view class="ilblock flo-right" style="height: 50%;width: 54%;margin-right:5%;">
+					<view class="color1 font13 name overflow2">{{item.snap_product.title}}</view>
+					<view style="margin-top: 100rpx;">
+						<view class="color2 font12 ilblock flo-left">x{{item.count}}</view>
+						<view class="color4 fon13 ilblock flo-right">¥{{item.snap_product.price}}</view>
+						<view style="clear: both;"></view>
+					</view>
 				</view>
 			</view>
-		</view>
+		</block>
 	</view>
 	<view class="font14 color1 boxBtm">
 		填写评价
 	</view>
 	<view class="bg2 font12 color3 radiu15 hiden" style="width: 92%; margin-left: 4%; height: 400rpx;">
-		<textarea class="bg2" value="请写下您对这次交易的看法">
+		<textarea class="bg2" placeholder="请写下您对这次交易的看法" data-key="content" bindinput="changeBind" value="{{web_submitData.content}}">
 			
 		</textarea>
 	</view>
-	<button style="width: 80%; margin-top: 100rpx;">提交</button>
+	<button style="width: 80%; margin-top: 100rpx;" bindtap="submit">提交</button>
 	
 </view>

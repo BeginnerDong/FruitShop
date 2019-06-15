@@ -1,25 +1,25 @@
 <!--logs.wxml-->
 <view class="infoList">
 	<view class="ilblock font14 color2" style="margin-top:34rpx;">图像:</view>
-	<image class="flo-right" src="../../image/arrow-icon1.png" style="width: 12rpx; height: 24rpx; margin-top: 34rpx;"></image>
+	<!-- <image class="flo-right" src="../../image/arrow-icon1.png" style="width: 12rpx; height: 24rpx; margin-top: 34rpx;"></image> -->
 	<view class="ilblock head flo-right">
-		<image class="headImg" src="../../image/about-img1.png"></image>
-		<image class="dalet" src="../../image/icon1.png"></image>
+		<image class="headImg" src="{{web_userData.headImgUrl}}" style="border-radius:50%"></image>
+		<!-- <image class="dalet" src="../../image/icon1.png"></image> -->
 	</view>
 	<view style="clear: both;"></view>
 </view>
 <view class="infoList">
 	<view class="ilblock font14 color2">昵称:</view>
-	<input class="ilblock font12 color3" placeholder="请输入您的昵称"></input>
+	<input class="ilblock font12 color3" placeholder="请输入您的昵称" value="{{web_userData.nickname}}" disabled="true"></input>
 </view>
 <view class="infoList">
 	<view class="ilblock font14 color2">姓名:</view>
-	<input class="ilblock font12 color3" placeholder="请输入您的姓名"></input>
+	<input class="ilblock font12 color3" placeholder="请输入您的姓名"  data-key="name" bindblur="changeBind" value="{{web_submitData.name}}"></input>
 </view>
 <view class="infoList">
 	<view class="ilblock font14 color2">电话:</view>
-	<input class="ilblock font12 color3" placeholder="请输入您的手机号码"></input>
+	<input class="ilblock font12 color3" placeholder="请输入您的手机号码"  data-key="phone" bindblur="changeBind" value="{{web_submitData.phone}}"></input>
 </view> 
 
 
-<button class="font15 radiu40">确认修改</button>
+<button class="font15 radiu40" open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submit':''}}">确认修改</button>

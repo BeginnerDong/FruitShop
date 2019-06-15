@@ -4,98 +4,75 @@
 		<view class="radiu40 font12 jupbox" bindtap="show">跳过</view>
 	</view>
 </view>
-<view class="box bg1">
-	<view class="box-top">
-		<swiper indicator-dots="{{false}}" circular="circular" autoplay="{{false}}" previous-margin="{{'80rpx'}}" next-margin="{{'80rpx'}}" bindchange="swiperChange">
-		  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
-		    <swiper-item>
-				<image src="{{item}}" class="slide-image {{swiperIndex == index? 'active' : ''}}" />
-		    </swiper-item>
-		  </block>
-		</swiper>
+<view wx:if="{{!is_show}}">
+	<view class="box bg1">
+		<view class="box-top">
+			<swiper indicator-dots="{{false}}" circular="circular" autoplay="{{false}}" previous-margin="{{'80rpx'}}"
+			 next-margin="{{'80rpx'}}" bindchange="swiperChange">
+				<block wx:for="{{web_sliderData}}" wx:key="{{index}}">
+					<swiper-item>
+						<image src="{{item.mainImg[0].url}}" class="slide-image {{swiperIndex == index? 'active' : ''}}" bindtap="{{item.url?'intoPath':''}}"
+						 data-path="{{item.url}}" />
+					</swiper-item>
+				</block>
+			</swiper>
+		</view>
 	</view>
-</view>
-<view class="bg1"  style="margin-bottom: 30rpx;">
-	<view class="search radiu40 hiden bg1">
-		<image src="../../image/home-icon.png" style="width: 32rpx; height: 32rpx;"></image>
-		<input class="ilblock"/>
-		<view class="ilblock color5 bg3 font15 search-box flo-right">搜索</view>
+	<view class="bg1" style="margin-bottom: 30rpx;">
+		<view class="search radiu40 hiden bg1">
+			<image src="../../image/home-icon.png" style="width: 32rpx; height: 32rpx;"></image>
+			<input class="ilblock" />
+			<view class="ilblock color5 bg3 font15 search-box flo-right">搜索</view>
+		</view>
 	</view>
-</view>
 
 
-<view class="bg2" style="padding:0rpx; width: 100%; margin-bottom: 120rpx; display: flex;justify-content:space-around; position: relative;">
-	<view class="left-nav bg1 font14" style="flex: 1;position: absolute;left: 0rpx; width: 22%;">
-		<view class="left-listitem {{currentData == 0 ? 'start' : ''}}"  data-current = "0" bindtap="checkCurrent">推荐</view>
-		<view class="left-listitem {{currentData == 1 ? 'start' : ''}}"  data-current = "1" bindtap="checkCurrent">热销水果</view>
-		<view class="left-listitem {{currentData == 2 ? 'start' : ''}}"  data-current = "2" bindtap="checkCurrent">进口水果</view>
-		<view class="left-listitem {{currentData == 3 ? 'start' : ''}}"  data-current = "3" bindtap="checkCurrent">当季水果</view>
+	<view class="bg2" style="padding:0rpx; width: 100%; margin-bottom: 120rpx; display: flex;justify-content:space-around; position: relative;">
+		<view class="left-nav bg1 font14" style="flex: 1;position: absolute;left: 0rpx; width: 22%;">
+			<block wx:for="{{web_labelData}}">
+				<view class="left-listitem {{currentData == item.id ? 'start' : ''}}" data-id="{{item.id}}" bindtap="checkCurrent">{{item.title}}</view>
+			</block>
+		</view>
+		<view style="flex:3;">
+			<block wx:for="{{web_mainData}}" wx:key="id">
+				<view class="right bg1 flo-right" style="{{index==0?'margin-top: 0rpx':''}};width:70%">
+					<view class="imgBox ilblock radiu15" bindtap="intoPath" data-path="/pages/storeDetails/storeDetails?id={{item.id}}">
+						<image src="{{item.mainImg[0].url}}"></image>
+					</view>
+					<view class="imgRight flo-right">
+						<view class="imgTitle color1 font13 overflow2">
+							{{item.title}}
+						</view>
+						<view class="imgTitle-btm">
+							<view class="ilblock color4 font13">￥{{item.price}}</view>
+							<image bindtap="addCart" data-index="{{index}}" class="flo-right" src="../../image/hone-icon1.png" style="width: 30rpx; height: 30rpx; margin-top: 12rpx;"></image>
+						</view>
+					</view>
+				</view>
+			</block>
+			<view style="width: 100%; clear: both;"></view>
+
+		</view>
 	</view>
-	<view style="flex:3;">
-		<view class="right bg1 flo-right" style="margin-top: 0rpx;" bindtap="intoPath" data-path="/pages/storeDetails/storeDetails">
-				<view class="imgBox ilblock radiu15">
-					<image src="../../image/home-img1.png"></image>
-				</view>
-				<view class="imgRight flo-right">
-					<view class="imgTitle color1 font13 overflow2">
-						标题标题标题	标题标题标题	标题标题标题
-					</view>
-					<view class="imgTitle-btm">
-							<view class="ilblock color4 font13">￥59.00</view>
-							<image class="flo-right" src="../../image/hone-icon1.png" style="width: 30rpx; height: 30rpx; margin-top: 12rpx;"></image>
-					</view>
-				</view>
-		</view>
-		<view class="right bg1 flo-right" bindtap="intoPath" data-path="/pages/storeDetails/storeDetails">
-				<view class="imgBox ilblock radiu15">
-					<image src="../../image/home-img1.png"></image>
-				</view>
-				<view class="imgRight flo-right">
-					<view class="imgTitle color1 font13 overflow2">
-						标题标题标题	标题标题标题	标题标题标题
-					</view>
-					<view class="imgTitle-btm">
-							<view class="ilblock color4 font13">￥59.00</view>
-							<image class="flo-right" src="../../image/hone-icon1.png" style="width: 30rpx; height: 30rpx; margin-top: 12rpx;"></image>
-					</view>
-				</view>
-		</view>
-		<view class="right bg1 flo-right" bindtap="intoPath" data-path="/pages/storeDetails/storeDetails">
-			<view class="imgBox ilblock radiu15">
-				<image src="../../image/home-img1.png"></image>
+
+	<view class="navbar">
+		<view class="navbar_item">
+			<view class="nav_img">
+				<image src="../../image/nabar1-a.png"></image>
 			</view>
-			<view class="imgRight flo-right">
-				<view class="imgTitle color1 font13 overflow2">
-					标题标题标题	标题标题标题	标题标题标题
-				</view>
-				<view class="imgTitle-btm">
-						<view class="ilblock color4 font13">￥59.00</view>
-						<image class="flo-right" src="../../image/hone-icon1.png" style="width: 30rpx; height: 30rpx; margin-top: 12rpx;"></image>
-				</view>
+			<view class="text this-text">首页</view>
+		</view>
+		<view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/car/car">
+			<view class="nav_img">
+				<image src="../../image/nabar2.png"></image>
 			</view>
+			<view class="text">购物车</view>
 		</view>
-		<view style="width: 100%; clear: both;"></view>
+		<view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/user/user">
+			<view class="nav_img">
+				<image src="../../image/nabar3.png" style="width: 44rpx;"></image>
+			</view>
+			<view class="text">我的</view>
+		</view>
 	</view>
 </view>
-
-<view class="navbar">
-	<view class="navbar_item">
-		<view class="nav_img">
-			<image src="../../image/nabar1-a.png"></image>
-		</view>
-		<view class="text this-text">首页</view>
-	</view>
-	<view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/car/car">
-		<view class="nav_img">
-			<image src="../../image/nabar2.png"></image>
-		</view>
-		<view class="text">购物车</view>
-	</view>
-	<view class="navbar_item" bindtap="intoPathRedirect" data-path="/pages/user/user">
-		<view class="nav_img">
-			<image src="../../image/nabar3.png" style="width: 44rpx;"></image>
-		</view>
-		<view class="text">我的</view>
-	</view>
-</view>
-

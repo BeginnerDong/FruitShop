@@ -1,33 +1,21 @@
 <!--logs.wxml-->
-
-<view class="bigbox bg1">
-	<view class="font12">
-		<view class="color3 ilblock" style="margin-left: 30rpx;">交易时间：2018-08-30</view>
-		<view class="color4 ilblock flo-right" style="margin-right: 30rpx;">处理中</view>
-	</view>
-	<view style="margin-top: 30rpx;">
-		<view class="ilblock box">
-			<image src="../../image/home-img1.png"></image>
+<block wx:for="{{web_mainData}}" wx:key="id">
+	<view class="bigbox bg1">
+		<view class="font12">
+			<view class="color3 ilblock" style="margin-left: 30rpx;">交易时间：{{item.create_time}}</view>
+			<view class="color4 ilblock flo-right" style="margin-right: 30rpx;">{{item.behavior==1?'处理中':'已处理'}}</view>
 		</view>
-		<view class="ilblock box-right flo-right">
-			<view class="color1 font13 name overflow2">标题标题标题标题标题标题标标题标题标题标题</view>
-			<view class="color4 font13" style="margin-top: 94rpx;">¥59.00</view>
-		</view>
+		<block wx:for="{{item.products}}" wx:for-item="c_item">
+			<view style="margin-top: 30rpx;">
+				<view class="ilblock box">
+					<image src="{{c_item.snap_product.mainImg[0].url}}"></image>
+				</view>
+				<view class="ilblock box-right flo-right">
+					<view class="color1 font13 name overflow2">{{c_item.snap_product.title}}</view>
+					<view class="color4 font13" style="margin-top: 94rpx;">¥{{c_item.snap_product.price}}</view>
+				</view>
+			</view>
+		</block>
 	</view>
-</view>
-<view class="bigbox bg1">
-	<view class="font12">
-		<view class="color3 ilblock" style="margin-left: 30rpx;">交易时间：2018-08-30</view>
-		<view class="color4 ilblock flo-right" style="margin-right: 30rpx;">处理中</view>
-	</view>
-	<view style="margin-top: 30rpx;">
-		<view class="ilblock box">
-			<image src="../../image/home-img1.png"></image>
-		</view>
-		<view class="ilblock box-right flo-right">
-			<view class="color1 font13 name overflow2">标题标题标题标题标题标题标标题标题标题标题</view>
-			<view class="color4 font13" style="margin-top: 94rpx;">¥59.00</view>
-		</view>
-	</view>
-</view>
+</block>
 

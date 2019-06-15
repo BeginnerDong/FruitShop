@@ -1,44 +1,40 @@
-
-	<view class="big-buybtm bg1">
+<block wx:for="{{web_mainData[0].product}}" wx:key="id">
+	<view class="big-buybtm bg1" style="height:310rpx">
 		<view class="buybtm-img ilblock radiu15 hiden flo-left">
-			<image src="../../image/home-img1.png"></image>
+			<image src="{{item.product.mainImg[0].url}}"></image>
 		</view>
 		<view class="ilblock flo-right" style="width: 60%; ">
-			<view class="color1 font15 overflow2"style="clear: both;width: 92%;height: 80rpx; margin-top: 60rpx;">标题标题标题标题标题标题标题标题标题标题</view>
-			<view class="color4 font15 overflow1"style="margin-top: 80rpx;">￥56.00</view>
+			<view class="color1 font15 overflow2"style="clear: both;width: 92%;height: 80rpx; margin-top: 60rpx;">{{item.product.title}}</view>
+			<view class="color4 font15 overflow1"style="margin-top: 80rpx;">￥{{item.product.price}}</view>
 		</view>
-	</view>
-	<view class="list" style="clear: both;border-top: solid 1px #ECECEC;" bindtap="intoPath" data-path="/pages/branchManage/branchManage">
-		<view class="color1 font13 ilblock" style="width: 19%;">
-			送货网点
-		</view>
-		<image class="flo-right" src="../../image/arrow-icon1.png" style="width: 14rpx;height: 26rpx; margin-top: 30rpx;"></image>
-	</view>
-	<view class="list" style="clear: both;border-top: solid 1px #ECECEC;">
-		<view class="color1 font13 ilblock" style="width: 19%;">
-			送货网点
-		</view>
-		<view class="ilblock font13 color3" style="width: 75%;">
-			陕西省西安市雁塔区高新大都会
-		</view>
-		<image class="flo-right" src="../../image/arrow-icon1.png" style="width: 14rpx;height: 26rpx; margin-top: 30rpx;"></image>
 	</view>
 	<view class="list">
 		<view class="color1 font13 ilblock">
 			购买数量：
 		</view>
 		<view class="color1 font14 ilblock flo-right">
-			<view class="ilblock list-item">-</view>
-			<view class="ilblock list-item">1</view>
-			<view class="ilblock list-item">+</view>
+			<view class="ilblock list-item" bindtap="counter" data-index="{{index}}" data-type="-">-</view>
+			<view class="ilblock list-item">{{item.count}}</view>
+			<view class="ilblock list-item" bindtap="counter" data-index="{{index}}" data-type="+">+</view>
 		</view>
 	</view>
+</block>
+	<view class="list" style="clear: both;display: flex;" bindtap="intoPath" data-path="/pages/branchManage/branchManage">
+		<view class="color1 font13 " style="width: 19%;">
+			送货网点
+		</view>
+		<view class="font13 color3 overflow1" style="width: 75%;">
+			{{web_userInfoData.address?web_userInfoData.address:'请选择送货网点'}}
+		</view>
+		<image class="flo-right" src="../../image/arrow-icon1.png" style="width: 14rpx;height: 26rpx; margin-top: 30rpx;"></image>
+	</view>
+
 	<view class="infoBox">
 		<view class="infoList font14 color1 bg1">
-				姓名<input class="font12 color3 ilblock" placeholder="请输入姓名" />
+				姓名<input class="font12 color3 ilblock" placeholder="请输入姓名" data-key="name" bindblur="inputChange" value="{{web_submitData.name}}"/>
 		</view>
 		<view class="infoList font14 color1 bg1">
-				手机号<input class="font12 color3 ilblock" placeholder="请输入手机号" />
+				手机号<input class="font12 color3 ilblock" placeholder="请输入手机号" data-key="phone" bindblur="inputChange" value="{{web_submitData.phone}}"/>
 		</view>
 		<view class="infoList font14 color1 bg1">
 				验证码<input class="font12 color3 ilblock" placeholder="请输入验证码" />
@@ -47,6 +43,6 @@
 	</view>
 	
 	<view class="oder-btm bg1">
-		<button class="color5 bg3 radiu40 ilblock font13 flo-right">立即购买</button>
-		<view class="ilblock color1 font14 flo-right" style="margin-top: 34rpx;">合计：<text class="color4">￥56.00</text></view>
+		<button class="color5 bg3 radiu40 ilblock font13 flo-right"  open-type="getUserInfo" bindgetuserinfo="{{web_buttonCanClick?'submit':''}}">立即购买</button>
+		<view class="ilblock color1 font14 flo-right" style="margin-top: 34rpx;">合计：<text class="color4">￥{{web_totalPrice}}</text></view>
 	</view>

@@ -1,10 +1,11 @@
+@import "../../wxParse/wxParse.wxss";
 .top{
 	width: 100%;
-	height: 360rpx;
+	height: 400rpx;
 }
 .top image{
 	width: 100%;
-	height: 360rpx;
+	height: 400rpx;
 }
 .top-text{
 	margin-top: 30rpx;

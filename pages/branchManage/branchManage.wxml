@@ -1,35 +1,14 @@
-<view class="list bg1">
-	<view class="font15 color1 text1">
-		<image src="../../image/stores-icon1.png"></image>
-		中华世纪城智能柜机
-		<view class="ilblock flo-right color7 font14">218m</view>
+<block wx:for="{{web_mainData}}" wx:key="id">
+	<view class="list bg1">
+		<view class="font15 color1 text1" bindtap="choose" data-user_no="{{item.user_no}}">
+			<image src="../../image/stores-icon1.png"></image>
+			{{item.name}}
+			<view class="ilblock flo-right color7 font14">{{item.distance}}km</view>
+		</view>
+		<view class="font14 color3" bindtap="choose" data-user_no="{{item.user_no}}">{{item.address}}</view>
+		<view class="text2 font10 color3" bindtap="{{item.isdefault&&item.isdefault==1?'':'userInfoUpdate'}}" data-index="{{index}}">
+			<image src="{{item.isdefault&&item.isdefault==1?'../../image/stores-icon2.png':'../../image/stores-icon3.png'}}"></image>
+			{{item.isdefault&&item.isdefault==1?'默认网点':'选为默认网点'}}
+		</view>
 	</view>
-	<view class="font14 color3">陕西省西安市雁塔区高新科技路西段239号中华世纪城</view>
-	<view class="text2 font10 color3">
-		<image src="../../image/stores-icon2.png"></image>默认网点
-	</view>
-</view>
-
-<view class="list bg1">
-	<view class="font15 color1 text1">
-		<image src="../../image/stores-icon1.png"></image>
-		中华世纪城智能柜机
-		<view class="ilblock flo-right color7 font14">218m</view>
-	</view>
-	<view class="font12 color3">陕西省西安市雁塔区高新科技路西段239号中华世纪城</view>
-	<view class="text2 font10 color3">
-		<image src="../../image/stores-icon2.png"></image>默认网点
-	</view>
-</view>
-
-<view class="list bg1">
-	<view class="font15 color1 text1">
-		<image src="../../image/stores-icon1.png"></image>
-		中华世纪城智能柜机
-		<view class="ilblock flo-right color7 font14">218m</view>
-	</view>
-	<view class="font12 color3">陕西省西安市雁塔区高新科技路西段239号中华世纪城</view>
-	<view class="text2 font10 color3">
-		<image src="../../image/stores-icon3.png"></image>默认网点
-	</view>
-</view>
+</block>

@@ -5,9 +5,9 @@
 			<image class="flo-right" src="../../image/about-icon.png" style="width: 35rpx; height: 35rpx; margin-right: 30rpx;" bindtap="intoPath" data-path="/pages/set/set"></image>
 		</view>
 		<view class="head radiu50 hiden ilblock">
-			<image src="../../image/about-img1.png" style="width: 100%;height: 100%;"></image>
+			<open-data type="userAvatarUrl"></open-data>
 		</view>
-		<view class="ilblock color5 font14 overflow1" style="position: relative;top: -40rpx; margin-left: 30rpx;">名称名称</view>
+		<view class="ilblock color5 font14 overflow1" style="position: relative;top: -40rpx; margin-left: 30rpx;"><open-data type="userNickName"></open-data></view>
 	</view>
 </view>
 <view class="bg1">
@@ -19,25 +19,25 @@
 			<image src="../../image/arrow-icon1.png" style="width: 11rpx; height: 21rpx;margin-left: 10rpx;"></image>
 		</view>
 	</view>
-	<view class="list_item" bindtap="intoPath" data-path="/pages/allOder/allOder">
+	<view class="list_item" bindtap="intoPath" data-path="/pages/allOder/allOder?num=1">
 		<view class="list_itemimg">
 			<image src="../../image/about-icon1.png"></image>
 		</view>
 		<view class="font12 color2 list_itemText">待支付</view>
 	</view>
-	<view class="list_item" bindtap="intoPath" data-path="/pages/allOder/allOder">
+	<view class="list_item" bindtap="intoPath" data-path="/pages/allOder/allOder?num=2">
 		<view class="list_itemimg">
 			<image src="../../image/about-icon2.png"></image>
 		</view>
 		<view class="font12 color2 list_itemText">待发货</view>
 	</view>
-	<view class="list_item" bindtap="intoPath" data-path="/pages/allOder/allOder">
+	<view class="list_item" bindtap="intoPath" data-path="/pages/allOder/allOder?num=3">
 		<view class="list_itemimg">
 			<image src="../../image/about-icon3.png"></image>
 		</view>
 		<view class="font12 color2 list_itemText">待收货</view>
 	</view>
-	<view class="list_item" bindtap="intoPath" data-path="/pages/allOder/allOder">
+	<view class="list_item" bindtap="intoPath" data-path="/pages/allOder/allOder?num=4">
 		<view class="list_itemimg">
 			<image src="../../image/about-icon4.png"></image>
 		</view>
@@ -52,7 +52,7 @@
 	<view style="width: 100%; clear: both;"></view>
 </view>
 </view>
-<view class="info bg1" bindtap="intoPath" data-path="/pages/userBranchManage/userBranchManage">
+<view class="info bg1" bindtap="intoPath" data-path="/pages/branchManage/branchManage">
 	<view class="ilblock listimg">
 		<image src="../../image/about-icon8.png"></image>
 	</view>
@@ -70,12 +70,12 @@
 	 <image src="../../image/arrow-icon1.png" style="width: 11rpx; height: 21rpx;margin-left: 10rpx;"></image>
 	 </view>
 </view>
-<view class="info bg1">
+<view class="info bg1" bindtap="phoneCall">
 	<view class="ilblock listimg">
 		<image src="../../image/about-icon8.png"></image>
 	</view>
 	<view class="ilblock color1 font14">联系客服</view>
-	<view class="color3 font13 flo-right">029-23515562
+	<view class="color3 font13 flo-right">{{web_mainData.description}}
 	 <image src="../../image/arrow-icon1.png" style="width: 11rpx; height: 21rpx;margin-left: 10rpx;"></image>
 	 </view>
 </view>

@@ -69,7 +69,9 @@
 	width: 57%;
 	
 }
-
+.big-buybtm{
+	heigth:310rpx
+}
 
 /* 底部 */
 .oder-btm{

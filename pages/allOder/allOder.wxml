@@ -1,90 +1,57 @@
 <!--logs.wxml-->
 <view class="topnav">
-	<view class="top-item {{currentData == 0 ? 'itemstar' : ''}}"  data-current = "0" bindtap="checkCurrent">
+	<view class="top-item {{num == 0 ? 'itemstar' : ''}}"  data-num = "0" bindtap="{{web_buttonCanClick?'menuClick':''}}">
 		全部
 	</view>
-	<view class="top-item {{currentData == 1 ? 'itemstar' : ''}}"  data-current = "1" bindtap="checkCurrent">
+	<view class="top-item {{num == 1 ? 'itemstar' : ''}}"  data-num = "1" bindtap="{{web_buttonCanClick?'menuClick':''}}">
 		待支付
 	</view>
-	<view class="top-item {{currentData == 2 ? 'itemstar' : ''}}"  data-current = "2" bindtap="checkCurrent">
+	<view class="top-item {{num == 2 ? 'itemstar' : ''}}"  data-num = "2" bindtap="{{web_buttonCanClick?'menuClick':''}}">
 		待发货
 	</view>
-	<view class="top-item {{currentData == 3 ? 'itemstar' : ''}}"  data-current = "3" bindtap="checkCurrent">
+	<view class="top-item {{num == 3 ? 'itemstar' : ''}}"  data-num = "3" bindtap="{{web_buttonCanClick?'menuClick':''}}">
 		待收货
 	</view>
-	<view class="top-item {{currentData == 4 ? 'itemstar' : ''}}"  data-current = "4" bindtap="checkCurrent">
+	<view class="top-item {{num == 4 ? 'itemstar' : ''}}"  data-num = "4" bindtap="{{web_buttonCanClick?'menuClick':''}}">
 		待评价
 	</view>
 </view>
 <view>
-	<block >
+	<block wx:for="{{web_mainData}}" wx:key="id">
 		<view class="bigbox bg1">
 			<view class="font12" style="height: 100rpx; line-height: 100rpx;">
-				<view class="color3 ilblock" style="margin-left: 30rpx;">交易时间：2018-08-30</view>
-				<view class="color4 ilblock flo-right" style="margin-right: 30rpx;">等待支付</view>
+				<view class="color3 ilblock" style="margin-left: 30rpx;">交易时间：{{item.create_time}}</view>
+				<view class="color4 ilblock flo-right" style="margin-right: 30rpx;" wx:if="{{item.pay_status=='0'}}">等待支付</view>
+				<view class="color4 ilblock flo-right" style="margin-right: 30rpx;" wx:if="{{item.pay_status=='1'&&item.transport_status=='0'}}">等待发货</view>
+				<view class="color4 ilblock flo-right" style="margin-right: 30rpx;" wx:if="{{item.pay_status=='1'&&item.transport_status=='1'}}">等待收货</view>
+				<view class="color4 ilblock flo-right" style="margin-right: 30rpx;" wx:if="{{item.pay_status=='1'&&item.transport_status=='2'}}">等待评价</view>
 			</view>
-			<block >
+			<block wx:for="{{item.products}}" wx:for-item="c_item">
 				<view>
 					<view class="ilblock box">
-						<image src="../../image/home-img1.png"></image>
+						<image src="{{c_item.snap_product.mainImg[0].url}}"></image>
 					</view>
 					<view class="ilblock flo-right" style="height: 50%;width: 54%;margin-right:5%;">
-						<view class="color1 font13 name overflow2">标题标题标题标题标题标题标题标题标题标题标题标题</view>
-						<view class="color4 font13" style="margin-top: 90rpx;">¥59.00</view>
+						<view class="color1 font13 name overflow2">{{c_item.snap_product.title}}</view>
+						<view class="color4 font13 ilblock" style="margin-top: 90rpx;">¥{{c_item.snap_product.price}}</view>
 					</view>
 				</view>
 			</block>
 			<view class="font12 color3" style="box-sizing: border-box; padding-right: 5%;padding-left: 5%; ">
-				<view class="box-btm ilblock flo-right">取消订单</view>
-				<view class="box-btm boxBtmGreen ilblock flo-right" style="margin-right: 40rpx;">去支付</view>
-				<view style="clear: both;"></view>
-			</view>
-		</view>
-		<view class="bigbox bg1">
-			<view class="font12" style="height: 100rpx; line-height: 100rpx;">
-				<view class="color3 ilblock" style="margin-left: 30rpx;">交易时间：2018-08-30</view>
-				<view class="color4 ilblock flo-right" style="margin-right: 30rpx;">等待支付</view>
-			</view>
-			<block >
-				<view>
-					<view class="ilblock box">
-						<image src="../../image/home-img1.png"></image>
-					</view>
-					<view class="ilblock flo-right" style="height: 50%;width: 54%;margin-right:5%;">
-						<view class="color1 font13 name overflow2">标题标题标题标题标题标题标题标题标题标题标题标题</view>
-						<view class="color4 font13 ilblock" style="margin-top: 90rpx;">¥59.00</view>
-						<view class="ilblock btmImg">
-							<image src="../../image/img8.png"></image>
-						</view>
-					</view>
-				</view>
-			</block>
-			<view class="font12 color3" style="box-sizing: border-box; padding-right: 5%;padding-left: 5%; ">
-				<view class="box-btm ilblock flo-right" bindtap="intoPath" data-path="/pages/afterSale/afterSale">申请售后</view>
-				<view style="clear: both;"></view>
-			</view>
-		</view>
-		
-		<view class="bigbox bg1">
-			<view class="font12" style="height: 100rpx; line-height: 100rpx;">
-				<view class="color3 ilblock" style="margin-left: 30rpx;">交易时间：2018-08-30</view>
-				<view class="color4 ilblock flo-right" style="margin-right: 30rpx;">等待支付</view>
-			</view>
-			<block >
-				<view>
-					<view class="ilblock box">
-						<image src="../../image/home-img1.png"></image>
-					</view>
-					<view class="ilblock flo-right" style="height: 50%;width: 54%;margin-right:5%;">
-						<view class="color1 font13 name overflow2">标题标题标题标题标题标题标题标题标题标题标题标题</view>
-						<view class="color4 font13" style="margin-top: 90rpx;">¥59.00</view>
-					</view>
-				</view>
-			</block>
-			<view class="font12 color3" style="box-sizing: border-box; padding-right: 5%;padding-left: 5%; ">
-				<view class="box-btm ilblock flo-right" bindtap="intoPath" data-path="/pages/evaluate/evaluate">去评价</view>
+				<view class="box-btm boxBtmGreen ilblock flo-right" style="margin-left: 30rpx;" wx:if="{{item.pay_status=='0'}}">去支付</view>
+				<view class="box-btm ilblock flo-right" style="margin-left: 30rpx;" wx:if="{{item.pay_status=='1'&&item.order_step!='3'}}" bindtap="intoPath" data-path="/pages/afterSale/afterSale?id={{item.id}}">申请售后</view>
+				<view class="box-btm ilblock flo-right" style="margin-left: 30rpx;" bindtap="zoomTap" data-index="{{index}}" wx:if="{{item.pay_status=='1'&&item.order_step!='3'}}">核销码</view>
+				<view class="box-btm ilblock flo-right" style="margin-left: 30rpx;" wx:if="{{item.pay_status=='1'&&item.order_step=='3'}}" bindtap="intoPath" data-path="/pages/evaluate/evaluate?id={{item.id}}">去评价</view>
 				<view style="clear: both;"></view>
 			</view>
 		</view>
 	</block>
+	<view class="fixd" wx-if="{{web_showZoom}}">
+		<view class="fixd-box" >
+			<image src="{{web_url}}"  mode=""></image>
+		</view>
+		<view style="text-align: center;" bindtap="closeZoom">
+			<image src="/image/icon2.png" style="width: 40rpx;height: 40rpx;" ></image>
+		</view>
+	</view>
 </view>

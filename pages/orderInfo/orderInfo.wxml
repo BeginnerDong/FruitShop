@@ -1,32 +1,38 @@
 <!--logs.wxml-->
 <view class="top">
-	<view class="topLeft ilblock">
+	<view class="topLeft ilblock" bindtap="scan">
 		<image src="../../image/scan-icon.png"></image>
 	</view>
 	<view class="topRight ilblock flo-right radiu40 bg1 hiden">
 		<image src="../../image/home-icon.png" style="width: 32rpx; height: 32rpx;"></image>
-		<input class="color3 font12 ilblock" placeholder="搜索手机号"/>
-		<button class="ilblock color5 bg3 font12 search-box flo-right">搜索</button>
+		<input class="color3 font12 ilblock" placeholder="搜索手机号" data-key="phone" bindblur="changeBind" value="{{web_submitData.phone}}"/>
+		<button class="ilblock color5 bg3 font12 search-box flo-right" bindtap="search">搜索</button>
 	</view>
 </view>
+
 <view>
-	<view class="bigbox bg1">
-		<view class="font12" style="height: 100rpx; line-height: 100rpx;">
-			<view class="color3 ilblock" style="margin-left: 30rpx;">交易时间：2018-08-30</view>
-			<view class="color4 ilblock flo-right" style="margin-right: 30rpx;">等待支付</view>
-		</view>
-		<view>
-			<view class="ilblock box">
-				<image src="../../image/home-img1.png"></image>
+	<block wx:for="{{web_mainData}}" wx:key="id">
+		<view class="bigbox bg1">
+			<view class="font12" style="height: 100rpx; line-height: 100rpx;">
+				<view class="color3 ilblock" style="margin-left: 30rpx;">交易时间：{{item.order[0].create_time}}</view>
+				<view class="color4 ilblock flo-right" style="margin-right: 30rpx;" wx:if="{{item.bahavior==1}}">待核销</view>
+				<view class="color4 ilblock flo-right" style="margin-right: 30rpx;" wx:else>已核销</view>
 			</view>
-			<view class="ilblock flo-right" style="height: 50%;width: 54%;margin-right:5%;">
-				<view class="color1 font13 name overflow2">标题标题标题标题标题标题标题标题标题标题标题标题</view>
-				<view class="color4 font13" style="margin-top: 90rpx;">¥59.00</view>
+			<view>
+				<view class="ilblock box">
+					<image src="{{item.order[0].products[0].snap_product.mainImg[0].url}}"></image>
+				</view>
+				<view class="ilblock flo-right" style="height: 50%;width: 54%;margin-right:5%;">
+					<view class="color1 font13 name overflow2">{{item.order[0].products[0].snap_product.title}}</view>
+					<view class="color4 font13" style="margin-top: 90rpx;">¥{{item.order[0].products[0].snap_product.price}}</view>
+				</view>
+			</view>
+			<view class="font12 color3" style="box-sizing: border-box; padding-right: 5%;padding-left: 5%; ">
+				<view class="box-btm ilblock flo-right boxBtmGreen" wx:if="{{item.bahavior==1}}" bindtap="qrUpdate" data-index="{{index}}">确认核销</view>
+				<view class="box-btm ilblock flo-right boxBtmGreen" wx:if="{{item.behavior==2}}">已核销</view>
+
+				<view style="clear: both;"></view>
 			</view>
 		</view>
-		<view class="font12 color3" style="box-sizing: border-box; padding-right: 5%;padding-left: 5%; ">
-			<view class="box-btm ilblock flo-right boxBtmGreen">确认核销</view>
-			<view style="clear: both;"></view>
-		</view>
-	</view>
+	</block>
 </view>
